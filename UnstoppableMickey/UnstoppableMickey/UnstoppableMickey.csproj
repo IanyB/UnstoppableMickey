@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0F318EBB-C0E9-417E-B4DC-223C6D837338}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnstoppableMickey</RootNamespace>
+    <AssemblyName>UnstoppableMickey</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>unstoppablemickey.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>UnstoppableMickey.UnstoppableMickey</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\GameSpeed.cs" />
+    <Compile Include="Collision\CollisionHandler.cs" />
+    <Compile Include="Engines\Engine.cs" />
+    <Compile Include="Exceptions\ForbiddenKeyException.cs" />
+    <Compile Include="Factory\Factory.cs" />
+    <Compile Include="GameObjects\CatsNumber.cs" />
+    <Compile Include="GameObjects\Points.cs" />
+    <Compile Include="GameObjects\TextObject.cs" />
+    <Compile Include="Interfaces\ICollidable.cs" />
+    <Compile Include="Maps\Map.cs" />
+    <Compile Include="Visualizers\ConsoleVisualiser.cs" />
+    <Compile Include="GameObjects\Block.cs" />
+    <Compile Include="GameObjects\Cat.cs" />
+    <Compile Include="GameObjects\GameObject.cs" />
+    <Compile Include="Interfaces\IGameController.cs" />
+    <Compile Include="GameObjects\Mickey.cs" />
+    <Compile Include="GameObjects\MovingObject.cs" />
+    <Compile Include="Controllers\KeyboardController.cs" />
+    <Compile Include="Interfaces\IVisualizer.cs" />
+    <Compile Include="Structs\Position.cs" />
+    <Compile Include="UnstoppableMickey.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GameObjects\Wall.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GameClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="unstoppablemickey.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
